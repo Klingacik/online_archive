@@ -8,9 +8,14 @@ class aPerson extends DataObject {
 		'Title_before' => 'Varchar',
 		'Title_after' => 'Varchar'
 	);
+
+	private static $has_many = array(
+		'Emails' => 'aEmail'
+	);
 }
 
 class aPerson_Controller extends ContentController {
 
 }
+
 ?>
