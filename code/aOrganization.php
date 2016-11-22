@@ -9,6 +9,16 @@ class aOrganization extends DataObject {
 		'Address1' => 'Varchar',
 		'Address2' => 'Varchar'
 	);
+	
+	private static $has_one = array(
+			'OrganizationsHolder' => 'aOrganizationsHolder'
+	);
+	
+	private static $summary_fields = array(	
+			'Name' => 'Name',
+			'Department' => 'Department',
+			'City' => 'City'
+	);
 
 }
 
