@@ -44,12 +44,6 @@ class aBooksHolder_Controller extends Page_controller {
 			));
 		}
 		
-		if($author = $request->getVar('Author'))	{
-			$books = $books->filter(array(
-				'Author.Person.Firstname' => $author	
-			));
-		}
-		
 		if($department = $request->getVar('Department'))	{
 			$books = $books->filter(array(
 					'Department:PartialMatch' => $department
@@ -79,7 +73,6 @@ class aBooksHolder_Controller extends Page_controller {
 				'BooksSearchForm',
 				FieldList::create(
 						TextField::create('Title'),
-						TextField::create('Author'),
 						TextField::create('Department'),
 						TextField::create('City'),
 						TextField::create('Country')
