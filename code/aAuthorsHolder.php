@@ -1,6 +1,7 @@
 <?php
 
 class aAuthorsHolder extends Page {
+	
 	private static $has_many = array(
 			'Authors' => 'aAuthor'
 	);
@@ -30,8 +31,13 @@ class aAuthorsHolder_Controller extends Page_controller {
 			return $this->httpError(404, 'That author could not be found!');
 		}
 	
+		/*$paginatedAuthors = PaginatedList::create(
+		 $authors,
+		 $request
+		 );*/
+	
 		return array(
-				'aAuthor' => $authors
+				'aAuthor' => $authors//$paginatedAuthors
 		);
 	}
 }

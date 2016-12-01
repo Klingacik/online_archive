@@ -18,12 +18,35 @@ class aBooksHolder extends Page {
 }
 
 class aBooksHolder_Controller extends Page_controller {
+	
+	private static $allowed_actions = array(
+			'show'
+	);
+	
+	public function show(SS_HTTPRequest $request)	{
+		$book = aBook::get()->byID($request->param('ID'));
+		
+		if(!$book)	{
+			return $this->httpError(404, 'No book has been found!');
+		}
+		
+		return array(
+				'aBook' => $book
+		);
+	}
+	
 	public function index(SS_HTTPRequest $request)	{
 		$books = aBook::get();
 	
-		if ($name = $request->getVar('Title'))	{
+		if ($name = $request->getVar('Title'))		{
 			$books = $books->filter(array(
 					'Name:PartialMatch' => $name
+			));
+		}
+		
+		if($author = $request->getVar('Author'))	{
+			$books = $books->filter(array(
+				'Author.Person.Firstname' => $author	
 			));
 		}
 		
@@ -56,6 +79,7 @@ class aBooksHolder_Controller extends Page_controller {
 				'BooksSearchForm',
 				FieldList::create(
 						TextField::create('Title'),
+						TextField::create('Author'),
 						TextField::create('Department'),
 						TextField::create('City'),
 						TextField::create('Country')
