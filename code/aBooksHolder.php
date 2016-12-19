@@ -62,9 +62,21 @@ class aBooksHolder_Controller extends Page_controller {
 			));
 		}
 		
-		return array(
-				'Results' => $books
+		$paginatedBooks = PaginatedList::create(
+			$books,
+			$request
+		)->setPageLength(2)
+		 ->setPaginationGetVar('s');
+
+		$data = array(
+				'Results' => $paginatedBooks
 		);
+
+		if($request->isAjax())	{
+			return $this->customise($data)->renderWith('aBooksHolder');
+		}
+
+		return $data;
 	}
 	
 	public function bookSearchForm()	{
