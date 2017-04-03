@@ -20,13 +20,12 @@
 	<div id="wrapper">
 
 		<header id="header">
-			<!--<% include TopBar %>-->			
-			<% include MainNav %>
+			<% include TopBar %>
 		</header>
 		
 		$Layout
 				
-		<!--<% include Footer %>-->	
+		
 	</div>	
 </body>
 </html>

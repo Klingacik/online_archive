@@ -1,7 +1,9 @@
 <div class="container">
   <h1 class="section-title">$aBook.Name</h1>
   <div class="col-sm-12">
-    <div class="sidebar gray col-sm-4">
+  <div class="col-sm-2">
+  </div>
+    <div class="col-sm-4">
     <h3 class="section-title">Info</h3>
       <dl class="row">
         <dt class="col-sm-3">Department</dt>
@@ -16,7 +18,7 @@
         <dt class="col-sm-3">Address</dt>
         <dd class="col-sm-9">$aBook.Address1</dd>
     </div>
-    <div class="sidebar gray col-sm-4">
+    <div class="col-sm-4">
       <h3 class="section-title">Authors</h3>
       <% loop $aBook.Authors %>
         <a href="$Link">
@@ -33,12 +35,12 @@
 
   <h1 class="section-title">Recent Papers </h1>
   <div class="grid-style1">
-    <% loop $aBook.Papers(3) %>
+    <% loop $aBook.Papers %>
     <div class="item col-md-4">
       <div class="info-blog">
         <ul class="top-info">
           <li><i class="fa fa-calendar"></i> $DatePublished.Format('F j, Y')</li>
-          <li><i class="fa fa-comments-o"></i> 2</li>
+          <li><i class="fa fa-user"></i> $Author.Person.FirstName $Author.Person.Lastname</li>
         </ul>
         <h3>
           <a href="$Link">$Title</a>

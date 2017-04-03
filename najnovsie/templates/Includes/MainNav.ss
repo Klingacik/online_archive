@@ -8,9 +8,9 @@
 								<button id="nav-mobile-btn"><i class="fa fa-bars"></i></button>
 								
 								<ul class="nav navbar-nav">
-									<% loop $Menu(1) %>
+									<!--<% loop $Menu(1) %>-->
 										<li><a class="$LinkingMode" href="$Link">$MenuTitle</a></li>
-									<% end_loop %>
+									<!--<% end_loop %>-->
 								</ul>
 							
 							</nav>
