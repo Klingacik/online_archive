@@ -14,15 +14,14 @@ class aPerson extends DataObject {
 	);
 	
 	private static $has_one = array(
-			'PersonsHolder' => 'aPersonsHolder'
+			'PersonsHolder' => 'aPersonsHolder',
+			'Photo' => 'Image'
 	);
 	
 	private static $summary_fields = array(		//tieto stlpce mi potom zobrazi v gridfielde
-			'Title_before' => 'Title before',
-			'Name' => 'Name',
-			'Middlename' => 'Middlename',
-			'Lastname' => 'Lastname',
-			'Title_after' => 'Title after'
+			'ID' => 'ID',
+			'FirstName' => 'Name',
+			'Lastname' => 'Lastname'
 	);
 }
 

@@ -8,6 +8,7 @@
 		
 		public function getCMSFields() {
 			$fields = parent::getCMSFields();		//vrati fieldy z CMS
+			$fields->addFieldToTab('Root.Main', TextareaField::create('Content'));
 			$fields->addFieldToTab('Root.Papers', GridField::create(
 					'Papers', 	//nazov
 					'Papers in the database',		//popis, ktory sa zobrazi v CMS ako titul gridfieldu

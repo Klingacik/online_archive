@@ -8,6 +8,7 @@ class aPaper extends DataObject {
 			'Page_start' => 'Int',
 			'Page_end' => 'Int',
 			'Abstract' => 'Varchar',
+			'Content' => 'Varchar',
 			'Keywords' => 'Varchar',
 			'DatePublished' => 'Date'
 	);

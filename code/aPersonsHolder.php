@@ -11,6 +11,7 @@ class aPersonsHolder extends Page {
 				'Persons', 	//nazov
 				'Persons in the database',		//popis, ktory sa zobrazi v CMS ako titul gridfieldu
 				$this->Persons(),
+				//aPerson::get(),
 				GridFieldConfig_RecordEditor::create()
 				));
 		return $fields;
